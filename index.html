@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RentDream — Premium Mobility Partner</title>
+<meta name="description" content="런칭 · 시승 · R&amp;D · 프로덕션 · 의전 — 브랜드와 프로덕션을 위한 프리미엄 모빌리티 파트너, 렌트드림.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="RentDream">
+<meta property="og:title" content="RentDream — Premium Mobility Partner">
+<meta property="og:description" content="런칭 · 시승 · R&amp;D · 프로덕션 · 의전">
+<meta property="og:image" content="https://rentdream.kr/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://rentdream.kr/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#000000">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* VOICE 하이엔드 자동차 브랜드처럼 절제되고 조용한 고급스러움
+   IDEA 야간 쇼룸: 어둠 속 조명 하나, 그 아래 한 대의 차
+   PICTURE 첫 화면 중앙의 스포츠카(금속 질감, 스포크 휠, 바닥 반사), 컬렉션의 네 대
+   COLOUR 먹색 바탕, 웜 화이트 글자, 샴페인 골드 머리선 하나
+   TYPE Cormorant Garamond 영문 제목 + Noto Sans KR 300/400 + Inter 작은 라벨
+   LAYOUT 모든 섹션 가운데 정렬, 넓은 여백, 머리선으로 구획 */
+:root{color-scheme:dark;--bg:#000;--bg2:#0a0a0b;--ink:#ece8e1;--sub:#9b978f;--mut:#6d6a65;--line:rgba(236,232,225,.12);--gold:#c9a96e}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--bg);color:var(--ink);font:300 16px/1.8 "Noto Sans KR",system-ui,sans-serif;overflow-x:clip;word-break:keep-all;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1120px,100% - 2*max(5vw,24px));margin:0 auto}
+section{padding:clamp(110px,13vw,180px) 0;text-align:center}
+.lab{display:block;font:500 11px/1 "Inter",sans-serif;letter-spacing:.32em;color:var(--gold);margin-bottom:26px;text-transform:uppercase}
+.lab::after{content:"";display:block;width:32px;height:1px;background:var(--gold);margin:22px auto 0;opacity:.7}
+h1,h2{font-family:"Cormorant Garamond",serif;font-weight:500;letter-spacing:-.01em;margin:0;text-wrap:balance}
+h2{font-size:clamp(40px,5vw,64px);line-height:1.08}
+.ko{margin:22px auto 0;font-size:17px;color:var(--sub);max-width:34em;line-height:1.9;text-wrap:balance}
+header{position:fixed;inset:0 0 auto;z-index:30;transition:background .4s,border-color .4s;border-bottom:1px solid transparent}
+header.on{background:rgba(7,8,10,.86);backdrop-filter:blur(14px);border-color:var(--line)}
+.nav{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:84px}
+.nav .l,.nav .r{display:flex;gap:clamp(24px,3vw,44px)}
+.nav .r{justify-content:flex-end}
+.nav a.m{font:500 11px/1 "Inter",sans-serif;letter-spacing:.26em;color:var(--sub);padding:14px 0;transition:color .2s}
+.nav a.m:hover{color:var(--ink)}
+.logo img{height:30px;width:auto;display:block;opacity:.95}
+a:focus-visible{outline:1px solid var(--gold);outline-offset:6px}
+.hero{position:relative;min-height:min(100svh,980px);padding:0;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;background:#000}
+.hero .beam{position:absolute;left:50%;top:-10%;width:min(900px,120vw);height:80%;transform:translateX(-50%);background:radial-gradient(50% 60% at 50% 0%,rgba(236,232,225,.13),rgba(236,232,225,0) 70%);pointer-events:none}
+.hero .txt{position:relative;padding-top:clamp(150px,20vh,210px)}
+.hero h1{font-size:clamp(46px,7.2vw,104px);line-height:1.02}
+.hero h1 i{font-style:italic;color:var(--gold)}
+.hero .sub{margin:26px 0 0;font-size:15px;letter-spacing:.08em;color:var(--sub)}
+.hero .stage{position:relative;width:min(1180px,100vw);margin:clamp(8px,2vh,24px) auto 0}
+.hero .stage img{width:100%;height:auto;display:block;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 14%,#000 86%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 14%,#000 86%,transparent 100%)}
+.hero .stage::after{content:"";position:absolute;inset:auto 0 0;height:22%;background:linear-gradient(transparent,#000)}
+.hero .cue{position:relative;display:block;margin:6px auto 34px;width:1px;height:46px;background:linear-gradient(var(--gold),transparent)}
+.rise{animation:rise 1.6s cubic-bezier(.2,.7,.2,1) both}
+.rise.d2{animation-delay:.25s}.rise.d3{animation-delay:.5s}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.about{border-top:1px solid var(--line)}
+.state{margin:0 auto;font:300 clamp(26px,3.2vw,40px)/1.55 "Noto Sans KR",sans-serif;letter-spacing:-.02em;color:var(--ink)}
+.figs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:clamp(80px,9vw,120px);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.fig{padding:44px 12px 40px}
+.fig+.fig{border-left:1px solid var(--line)}
+.fig b{display:block;font:500 clamp(34px,3.6vw,48px)/1 "Cormorant Garamond",serif;white-space:nowrap}
+.fig b sup{font-size:.5em;vertical-align:.7em;margin-left:2px;color:var(--gold)}
+.fig span{display:block;margin-top:14px;font-size:14px;color:var(--sub);letter-spacing:.02em}
+.coll{background:#000;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.cars{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(40px,5vw,64px) clamp(16px,2.4vw,32px);margin-top:clamp(70px,8vw,100px)}
+.car img{width:100%;height:auto;display:block;aspect-ratio:960/527;object-fit:cover}
+.car h3{margin:18px 0 0;font:400 18px/1.4 "Noto Sans KR",sans-serif;letter-spacing:.02em}
+.car p{margin:8px 0 0;font:500 11px/1 "Inter",sans-serif;letter-spacing:.28em;color:var(--mut);text-transform:uppercase}
+.coll .foot{margin:clamp(60px,7vw,90px) 0 0;font-size:15px;color:var(--sub);letter-spacing:.04em}
+.svc{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:clamp(70px,8vw,100px);border-top:1px solid var(--line)}
+.cell{padding:52px 28px 50px;border-bottom:1px solid var(--line)}
+.cell:not(:nth-child(3n+1)){border-left:1px solid var(--line)}
+.cell em{display:block;font:500 10.5px/1 "Inter",sans-serif;font-style:normal;letter-spacing:.3em;color:var(--gold);margin-bottom:18px}
+.cell h3{margin:0;font:400 20px/1.45 "Noto Sans KR",sans-serif;letter-spacing:-.01em}
+.cell p{margin:12px 0 0;font-size:14px;color:var(--sub);line-height:1.8}
+.works{border-top:1px solid var(--line)}
+.wk{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:clamp(70px,8vw,100px);border-top:1px solid var(--line)}
+.w{padding:40px 20px 38px;border-bottom:1px solid var(--line)}
+.w:not(:nth-child(4n+1)){border-left:1px solid var(--line)}
+.w span{display:block;font-size:12.5px;letter-spacing:.12em;color:var(--gold)}
+.w b{display:block;margin-top:12px;font-weight:300;font-size:16px;line-height:1.65}
+.close{padding:clamp(120px,14vw,200px) 0;border-top:1px solid var(--line);background:radial-gradient(60% 80% at 50% 100%,#14171c,#07080a 70%)}
+.close h2{font-style:italic;font-size:clamp(42px,5.6vw,76px)}
+.close .ko{margin-top:28px}
+footer{border-top:1px solid var(--line);padding:56px 0 64px;text-align:center;color:var(--mut);font-size:13px;letter-spacing:.02em}
+footer img{height:26px;width:auto;margin:0 auto 22px;display:block;opacity:.85}
+footer p{margin:4px 0 0}
+@media(max-width:900px){.cars{grid-template-columns:repeat(2,minmax(0,1fr))}.svc{grid-template-columns:repeat(2,minmax(0,1fr))}.cell:not(:nth-child(3n+1)){border-left:0}.cell:nth-child(2n){border-left:1px solid var(--line)}.wk{grid-template-columns:repeat(2,minmax(0,1fr))}.w:not(:nth-child(4n+1)){border-left:0}.w:nth-child(2n){border-left:1px solid var(--line)}.figs{grid-template-columns:repeat(2,minmax(0,1fr))}.fig:nth-child(3){border-left:0}.fig:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+@media(max-width:640px){.nav{grid-template-columns:1fr;justify-items:center}.nav .l,.nav .r{display:none}.cars{grid-template-columns:minmax(0,1fr)}.svc,.wk{grid-template-columns:minmax(0,1fr)}.cell:nth-child(2n),.w:nth-child(2n){border-left:0}.cell{padding:40px 8px}.w{padding:30px 8px}.hero .txt{padding-top:140px}.hero .stage{width:118vw;margin-left:-9vw}.hero{min-height:auto}.hero .txt{padding-top:150px}}
+@media(prefers-reduced-motion:reduce){.rise{animation:none}html{scroll-behavior:auto}header{transition:none}}
+/* align-fix */
+.lab{text-indent:.32em}.hero .sub{text-indent:.08em}.car p{text-indent:.28em}.cell em{text-indent:.3em}.w span{text-indent:.12em}
+.fig b sup{position:absolute;margin-left:3px;transform:translateY(-.15em)}
+/* sub-fix */
+.hero .sub{margin:36px 0 0;font:500 clamp(19px,1.85vw,26px)/1.4 "Noto Sans KR",sans-serif;letter-spacing:.08em;text-indent:.08em;color:#f4f0e8;white-space:nowrap;text-shadow:0 1px 18px rgba(0,0,0,.6)}
+.hero .sub i{font-style:normal;color:var(--gold);margin:0 .6em;font-weight:700}
+@media(max-width:640px){.hero .sub{font-size:17.5px;letter-spacing:.04em;text-indent:.04em;margin-top:28px}.hero .sub i{margin:0 .45em}}
+footer{padding:64px 0 60px}footer img{height:40px;margin:0 auto 26px;opacity:.95}
+@media(max-width:640px){footer img{height:34px}}
+/* pc-type */
+@media(min-width:641px){
+:root{--sub:#c4bfb6;--mut:#9a968f}
+.nav a.m{font-size:13.5px;color:#c4bfb6}
+.lab{font-size:13.5px}
+.state{font-size:46px}
+.ko{font-size:20px;font-weight:400}
+.fig b{font-size:54px}
+.fig span{font-size:17px;font-weight:400}
+.car h3{font-size:21px}
+.car p{font-size:13.5px;color:#a6a199}
+.cell em{font-size:13px}
+.cell h3{font-size:23px}
+.cell p{font-size:17.5px;font-weight:400}
+.w span{font-size:15.5px;font-weight:400}
+.w b{font-size:19px;font-weight:400}
+footer p{font-size:14px}
+}
+/* footer-contact */
+.fbrand{display:flex;align-items:center;justify-content:center;gap:26px;margin:0 auto 26px}
+footer .fbrand img{margin:0;height:40px}
+.fsep{width:1px;height:30px;background:rgba(201,169,110,.5)}
+.fcontact{display:flex;flex-direction:column;align-items:flex-start;gap:5px;font:500 16px/1 "Inter",sans-serif;letter-spacing:.06em;color:var(--ink);text-align:left;transition:color .25s}
+.fcontact span{font:400 12.5px/1 "Noto Sans KR",sans-serif;letter-spacing:.08em;color:var(--sub)}
+.fcontact:hover{color:var(--gold)}
+@media(max-width:640px){.fbrand{gap:18px}footer .fbrand img{height:32px}.fsep{height:26px}.fcontact{font-size:14.5px}.fcontact span{font-size:11.5px}}
+/* fbiz */
+footer .fbiz{font-size:13px;letter-spacing:.02em;color:var(--mut);margin:0 0 6px}
+@media(max-width:640px){footer .fbiz{font-size:12px}}
+</style>
+</head>
+<body>
+
+<header id="hd">
+<div class="wrap nav">
+<nav class="l" aria-label="왼쪽 메뉴"><a class="m" href="#about">ABOUT</a><a class="m" href="#collection">COLLECTION</a></nav>
+<a class="logo" href="#top" aria-label="RentDream"><img src="logo/rentdream-white.png" alt="RentDream" width="109" height="30"></a>
+<nav class="r" aria-label="오른쪽 메뉴"><a class="m" href="#services">SERVICES</a><a class="m" href="#works">WORKS</a></nav>
+</div>
+</header>
+
+<main id="top">
+<section class="hero">
+<div class="beam" aria-hidden="true"></div>
+<div class="wrap txt">
+<span class="lab rise">Premium Mobility Partner</span>
+<h1 class="rise d2">The Right Car,<br><i>for Every Scene.</i></h1>
+<p class="sub rise d3">런칭<i>·</i>시승<i>·</i>R&amp;D<i>·</i>프로덕션<i>·</i>의전</p>
+</div>
+<div class="stage rise d3"><img src="img/hero.jpg" alt="쇼룸 턴테이블 위의 롤스로이스 컬리넌" width="1600" height="892"></div>
+<a class="cue" href="#about" aria-label="아래로"></a>
+</section>
+
+<section class="about" id="about">
+<div class="wrap">
+<span class="lab">About</span>
+<p class="state">가장 중요한 순간에,<br>가장 어울리는 한 대를.</p>
+<p class="ko">렌트드림은 브랜드와 프로덕션을 위한 프리미엄 모빌리티 파트너입니다.</p>
+<div class="figs">
+<div class="fig"><b>200<sup>+</sup></b><span>수입 차량</span></div>
+<div class="fig"><b>150<sup>+</sup></b><span>국산 차량</span></div>
+<div class="fig"><b>Private</b><span>라인업 외 모델 소싱</span></div>
+<div class="fig"><b>Concierge</b><span>인도부터 회수까지</span></div>
+</div>
+</div>
+</section>
+
+<section class="coll" id="collection">
+<div class="wrap">
+<span class="lab">Fleet</span>
+<h2>The Collection</h2>
+<p class="ko">국산차부터 슈퍼카까지, 대부분의 모델을 운영합니다.</p>
+<div class="cars" id="cars"></div>
+</div>
+</section>
+
+<section id="services">
+<div class="wrap">
+<span class="lab">Services</span>
+<h2>Where We Perform</h2>
+<p class="ko">브랜드의 중요한 순간에 함께합니다.</p>
+<div class="svc" id="svc"></div>
+</div>
+</section>
+
+<section class="works" id="works">
+<div class="wrap">
+<span class="lab">Portfolio</span>
+<h2>Selected Works</h2>
+<p class="ko">차량이 주인공이 되는 순간을 함께해 왔습니다.</p>
+<div class="wk" id="wk"></div>
+</div>
+</section>
+
+<section class="close">
+<div class="wrap">
+<h2>Every scene deserves<br>the right car.</h2>
+<p class="ko">약속된 시간과 장소에, 완벽한 컨디션으로.</p>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="wrap">
+<div class="fbrand"><img src="logo/rentdream-white.png" alt="RentDream" width="95" height="26"><span class="fsep" aria-hidden="true"></span><a class="fcontact" href="tel:+821067900580"><span>대표 조영직</span>010 6790 0580</a></div>
+<p class="fbiz">㈜렌트드림 · 사업자등록번호 450-81-00922</p>
+<p>© 2026 RentDream. All rights reserved.</p>
+</div>
+</footer>
+
+<script>
+{
+const hd=document.getElementById('hd');
+const onS=()=>hd.classList.toggle('on',scrollY>40);
+addEventListener('scroll',onS,{passive:true});onS();
+
+const cars=[
+['12cilindri','V12 그랜드 투어러','Ferrari 12Cilindri'],
+['huracan','슈퍼카','Lamborghini Huracán EVO'],
+['296gts','하이브리드 스파이더','Ferrari 296 GTS'],
+['ghost','플래그십 세단','Rolls-Royce Ghost'],
+['dawn','컨버터블','Rolls-Royce Dawn'],
+['urus','퍼포먼스 SUV','Lamborghini Urus']];
+document.getElementById('cars').innerHTML=cars.map(c=>`<div class="car"><img src="img/${c[0]}.jpg" alt="${c[2]}" width="960" height="527" loading="lazy"><h3>${c[1]}</h3><p>${c[2]}</p></div>`).join('');
+
+const svc=[
+['Launch','신차 런칭 · 비교시승','비교 모델 셀렉션부터 행사 운영까지'],
+['Campaign','광고 · 캠페인 프로덕션','브랜드 무드에 맞춘 모델과 컬러'],
+['Film & Series','영화 · 드라마 · OTT','긴 촬영에도 동일한 컨디션'],
+['Training','딜러 트레이닝 · 시승 콘보이','장거리 시승 프로그램 운영'],
+['R&D','연구 · 전시','벤치마킹과 전시 프로그램'],
+['Corporate','기업 의전 · 장기 운영','임원 의전과 업무 차량']];
+document.getElementById('svc').innerHTML=svc.map(s=>`<div class="cell"><em>${s[0].toUpperCase().replace('&','&amp;')}</em><h3>${s[1]}</h3><p>${s[2]}</p></div>`).join('');
+
+const wk=[
+['수입차 브랜드','신차 런칭 비교시승'],
+['수입차 브랜드','장거리 시승 콘보이<br>딜러 트레이닝'],
+['수입차 브랜드','SUV 런칭 시승 프로그램'],
+['수입차 브랜드','브랜드 이벤트 운영'],
+['완성차 연구소','연구 · 전시 차량 지원'],
+['수입차 교육센터','트레이닝 차량 공급'],
+['글로벌 OTT','오리지널 시리즈 프로덕션'],
+['이벤트 에이전시','비교시승 이벤트 운영']];
+document.getElementById('wk').innerHTML=wk.map(w=>`<div class="w"><span>${w[0]}</span><b>${w[1]}</b></div>`).join('');
+}
+</script>
+</body>
+</html>
