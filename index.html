@@ -20,7 +20,7 @@
 <meta name="theme-color" content="#000000">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500&family=Noto+Sans+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 /* VOICE 하이엔드 자동차 브랜드처럼 절제되고 조용한 고급스러움
    IDEA 야간 쇼룸: 어둠 속 조명 하나, 그 아래 한 대의 차
@@ -135,6 +135,109 @@ footer .fbrand img{margin:0;height:40px}
 /* fbiz */
 footer .fbiz{font-size:13px;letter-spacing:.02em;color:var(--mut);margin:0 0 6px}
 @media(max-width:640px){footer .fbiz{font-size:12px}}
+/* car-names */
+.car p{letter-spacing:.2em;text-indent:.2em;white-space:nowrap}
+@media(min-width:641px){.car p{font-size:clamp(10.5px,1.12vw,13.5px)}.car h3{font-size:clamp(18px,1.9vw,21px);white-space:nowrap}}
+/* mobile-2col */
+.more{display:none}
+@media(max-width:640px){
+.cars{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 12px;margin-top:56px}
+.car p{display:none}
+.car h3{margin-top:10px;font-size:13px;letter-spacing:-.01em;white-space:nowrap;font-weight:400}
+.cars:not(.open) .car:nth-child(n+7){display:none}
+.more{display:inline-flex;align-items:center;gap:10px;margin:40px auto 0;padding:15px 30px;background:none;border:1px solid var(--gold);color:var(--ink);font:500 13px/1 "Noto Sans KR",sans-serif;letter-spacing:.06em;cursor:pointer}
+.more i{font-style:normal;color:var(--gold);transition:transform .3s}
+.cars.open+.more i{transform:rotate(180deg)}
+.coll .foot{margin-top:40px}
+}
+/* lightbox */
+.car{cursor:zoom-in}
+.car:focus-visible{outline:1px solid var(--gold);outline-offset:6px}
+.lb{position:fixed;inset:0;z-index:100;background:#000;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s;touch-action:none}
+.lb.on{opacity:1;visibility:visible}
+.lb figure{margin:0;width:min(1200px,92vw);text-align:center;transition:transform .25s ease,opacity .25s ease}
+.lb img{width:100%;height:auto;display:block}
+.lb figcaption{margin-top:22px}
+.lb figcaption b{display:block;font:400 22px/1.4 "Noto Sans KR",sans-serif;color:var(--ink)}
+.lb figcaption span{display:block;margin-top:8px;font:500 12px/1 "Inter",sans-serif;letter-spacing:.24em;text-indent:.24em;text-transform:uppercase;color:var(--sub)}
+.lb .x{position:absolute;top:18px;right:18px;width:48px;height:48px;border:0;background:none;color:var(--ink);font:300 34px/1 "Inter",sans-serif;cursor:pointer}
+.lb .nv{position:absolute;top:50%;transform:translateY(-50%);width:56px;height:56px;border:1px solid rgba(201,169,110,.5);border-radius:50%;background:rgba(0,0,0,.4);color:var(--gold);font:300 22px/1 "Inter",sans-serif;cursor:pointer}
+.lb .pv{left:24px}.lb .nx{right:24px}
+.lb .ct{position:absolute;top:32px;left:0;right:0;text-align:center;font:500 12px/1 "Inter",sans-serif;letter-spacing:.24em;color:var(--sub);pointer-events:none}
+.lb .hint{position:absolute;bottom:28px;left:0;right:0;text-align:center;font-size:12px;color:var(--mut);pointer-events:none}
+@media(max-width:640px){.lb figure{width:100vw}.lb .nv{display:none}.lb figcaption b{font-size:18px}.lb figcaption span{font-size:10.5px}.lb .x{top:10px;right:8px}}
+@media(min-width:641px){.lb .hint{display:none}}
+/* logo-size */
+.logo img{height:40px}
+@media(max-width:640px){.logo img{height:36px}}
+/* hero-cta */
+.cta{display:inline-flex;align-items:center;gap:12px;margin-top:34px;padding:13px 22px 13px 20px;border:1px solid rgba(201,169,110,.75);border-radius:999px;background:rgba(10,10,11,.45);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);color:var(--ink);font:500 15px/1 "Noto Sans KR",sans-serif;letter-spacing:.04em;transition:background .3s,color .3s,border-color .3s}
+.cta svg{width:30px;height:14px;flex:none;color:var(--gold);transition:color .3s}
+.cta .chev{width:9px;height:9px;border-right:1.5px solid var(--gold);border-bottom:1.5px solid var(--gold);transform:rotate(45deg);margin:-4px 2px 0 2px;animation:chev 1.8s ease-in-out infinite;transition:border-color .3s}
+.cta:hover{background:var(--gold);color:#111;border-color:var(--gold)}
+.cta:hover svg{color:#111}.cta:hover .chev{border-color:#111}
+@keyframes chev{0%,100%{transform:translateY(0) rotate(45deg);opacity:.6}50%{transform:translateY(4px) rotate(45deg);opacity:1}}
+@media(max-width:640px){.cta{margin-top:26px;font-size:14.5px;padding:12px 20px 12px 18px}}
+@media(prefers-reduced-motion:reduce){.cta .chev{animation:none}}
+/* cta-shine */
+.cta{position:relative;overflow:hidden;isolation:isolate;gap:14px;padding:17px 30px 17px 26px;font-size:17px;font-weight:500;border:1.5px solid transparent;
+background:linear-gradient(#0c0c0d,#0c0c0d) padding-box,linear-gradient(100deg,#6f5a30 0%,#c9a96e 25%,#fff1c4 50%,#c9a96e 75%,#6f5a30 100%) border-box;background-size:100% 100%,250% 100%;
+animation:ctaB 3.2s linear infinite,ctaG 3.2s ease-in-out infinite}
+.cta::after{content:"";position:absolute;inset:-2px;z-index:-1;background:linear-gradient(105deg,transparent 30%,rgba(255,236,190,.22) 47%,rgba(255,248,225,.38) 50%,rgba(255,236,190,.22) 53%,transparent 70%);transform:translateX(-120%);animation:ctaS 3.2s ease-in-out infinite;pointer-events:none}
+.cta svg{width:34px;height:16px}
+.cta .chev{width:10px;height:10px;border-width:0 2px 2px 0}
+.cta:hover{background:linear-gradient(var(--gold),var(--gold)) padding-box,linear-gradient(var(--gold),var(--gold)) border-box}
+@keyframes ctaB{0%{background-position:0 0,100% 0}100%{background-position:0 0,-150% 0}}
+@keyframes ctaG{0%,100%{box-shadow:0 0 0 rgba(201,169,110,0),0 0 18px rgba(201,169,110,.12)}50%{box-shadow:0 0 22px rgba(232,200,130,.35),0 0 46px rgba(201,169,110,.18)}}
+@keyframes ctaS{0%,35%{transform:translateX(-120%)}75%,100%{transform:translateX(120%)}}
+@media(max-width:640px){.cta{font-size:17px;padding:17px 30px 17px 26px;margin-top:30px}}
+@media(prefers-reduced-motion:reduce){.cta,.cta::after{animation:none}}
+/* cta-tempo */
+.cta{font-weight:600;animation:ctaB 1.8s linear infinite,ctaG 1.8s ease-in-out infinite}
+.cta::after{animation:ctaS 1.8s ease-in-out infinite}
+@keyframes ctaS{0%,20%{transform:translateX(-120%)}70%,100%{transform:translateX(120%)}}
+/* mobile-break */
+.mbr{display:none}
+@media(max-width:640px){.mbr{display:inline}}
+/* coll-foot */
+.coll .foot{margin:clamp(56px,6vw,80px) auto 0;font-size:17px;line-height:1.8;color:var(--sub)}
+.coll .foot .ask{display:table;margin:18px auto 0;padding-bottom:4px;border-bottom:1px solid rgba(201,169,110,.6);color:var(--gold);font-weight:500;letter-spacing:.04em;transition:color .2s,border-color .2s}
+.coll .foot .ask:hover{color:var(--ink);border-color:var(--ink)}
+@media(max-width:640px){.coll .foot{font-size:14.5px;margin-top:36px}.coll .foot .ask{margin-top:14px}}
+/* ask-sheet */
+.coll .foot button.ask{background:none;border:0;border-bottom:1px solid rgba(201,169,110,.6);font:500 inherit "Noto Sans KR",sans-serif;font-size:inherit;cursor:pointer}
+.sh{position:fixed;inset:0;z-index:110;background:rgba(0,0,0,.6);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s}
+.sh.on{opacity:1;visibility:visible}
+.sh .pn{position:relative;width:min(420px,92vw);background:#0e0e10;border:1px solid rgba(201,169,110,.45);border-radius:18px;padding:34px 26px 26px;text-align:center;transform:translateY(12px);transition:transform .3s}
+.sh.on .pn{transform:none}
+.sh h4{margin:0;font:500 19px/1.4 "Noto Sans KR",sans-serif;color:var(--ink)}
+.sh .pn>p{margin:8px 0 22px;font-size:14px;color:var(--sub)}
+.sh .op{display:flex;align-items:center;gap:14px;width:100%;margin-top:10px;padding:16px 18px;border:1px solid rgba(236,232,225,.14);border-radius:12px;background:#151518;color:var(--ink);text-align:left;transition:border-color .2s,background .2s}
+.sh .op:hover{border-color:var(--gold);background:#1a1a1d}
+.sh .op svg{width:26px;height:26px;flex:none;color:var(--gold)}
+.sh .op b{display:block;font:500 16px/1.3 "Noto Sans KR",sans-serif}
+.sh .op small{display:block;margin-top:3px;font-size:12.5px;color:var(--sub)}
+.sh .op em{margin-left:auto;font-style:normal;color:var(--gold)}
+.sh .cx{position:absolute;top:10px;right:12px;width:40px;height:40px;border:0;background:none;color:var(--sub);font:300 26px/1 "Inter",sans-serif;cursor:pointer}
+@media(max-width:640px){.sh{align-items:flex-end}.sh .pn{width:100%;border-radius:20px 20px 0 0;border-width:1px 0 0;padding:30px 20px calc(22px + env(safe-area-inset-bottom));transform:translateY(100%)}.sh.on .pn{transform:none}}
+/* footer-mail */
+.fcontact a{color:inherit;transition:color .2s}
+.fcontact a:hover{color:var(--gold)}
+.fcontact .fmail{font:400 14px/1 "Inter",sans-serif;letter-spacing:.04em;color:var(--sub);margin-top:2px}
+@media(max-width:640px){.fcontact .fmail{font-size:12.5px}}
+/* ask-cta */
+.coll .foot .askb{display:inline-flex;margin:clamp(34px,3.6vw,44px) auto 0;cursor:pointer;font-family:"Noto Sans KR",sans-serif;font-size:17px}
+.askb svg{width:24px;height:24px}
+.askb .arr{font-style:normal;color:var(--gold);font:500 18px/1 "Inter",sans-serif;margin-left:2px;animation:arrN 1.2s ease-in-out infinite;transition:color .3s}
+.cta:hover .arr{color:#111}
+@keyframes arrN{0%,100%{transform:translateX(0)}50%{transform:translateX(5px)}}
+@media(max-width:640px){.coll .foot .askb{margin-top:30px}}
+@media(prefers-reduced-motion:reduce){.askb .arr{animation:none}}
+/* close-cta */
+.close .askb{display:inline-flex;margin-top:clamp(34px,3.6vw,44px);cursor:pointer;font-family:"Noto Sans KR",sans-serif;font-size:17px}
+@media(max-width:640px){.close .askb{margin-top:30px}}
+/* askb-block-fix */
+.coll .foot .askb,.close .askb{display:flex;width:max-content;margin-left:auto;margin-right:auto}
 </style>
 </head>
 <body>
@@ -154,6 +257,7 @@ footer .fbiz{font-size:13px;letter-spacing:.02em;color:var(--mut);margin:0 0 6px
 <span class="lab rise">Premium Mobility Partner</span>
 <h1 class="rise d2">The Right Car,<br><i>for Every Scene.</i></h1>
 <p class="sub rise d3">런칭<i>·</i>시승<i>·</i>R&amp;D<i>·</i>프로덕션<i>·</i>의전</p>
+<a class="cta rise d3" href="#collection"><svg viewBox="0 0 60 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20.5h3.5M17.5 20.5h22M50.5 20.5H57v-5.2c0-1.6-1.1-2.9-2.6-3.3L46 10l-8-6.2c-1-.8-2.2-1.2-3.5-1.2H21c-1.4 0-2.7.6-3.6 1.6L12 10.2 6.2 11.5C4.3 12 3 13.6 3 15.5v5"/><circle cx="12" cy="21" r="5"/><circle cx="45" cy="21" r="5"/><path d="M14.5 10.2h30"/></svg><span>보유차량 보기</span><i class="chev" aria-hidden="true"></i></a>
 </div>
 <div class="stage rise d3"><img src="img/hero.jpg" alt="쇼룸 턴테이블 위의 롤스로이스 컬리넌" width="1600" height="892"></div>
 <a class="cue" href="#about" aria-label="아래로"></a>
@@ -177,8 +281,10 @@ footer .fbiz{font-size:13px;letter-spacing:.02em;color:var(--mut);margin:0 0 6px
 <div class="wrap">
 <span class="lab">Fleet</span>
 <h2>The Collection</h2>
-<p class="ko">국산차부터 슈퍼카까지, 대부분의 모델을 운영합니다.</p>
+<p class="ko">국산차부터 슈퍼카까지 <br class="mbr">어떤 현장이든 맞는 차량을 준비합니다.</p>
 <div class="cars" id="cars"></div>
+<button class="more" id="more" type="button"><span>차량 더 보기</span><i>↓</i></button>
+<p class="foot">찾으시는 차량이 라인업에 없어도 괜찮습니다.<br>문의 주시면 원하시는 모델을 찾아 안내해 드립니다.<button class="cta askb ask-open" id="ask" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4c-4.97 0-9 3.13-9 7 0 2.5 1.7 4.7 4.25 5.94L6.5 20l3.9-2.2c.52.07 1.05.1 1.6.1 4.97 0 9-3.13 9-7s-4.03-7-9-7z"/><path d="M8 11h.01M12 11h.01M16 11h.01" stroke-width="2.4"/></svg><span>차량 문의하기</span><i class="arr" aria-hidden="true">→</i></button></p>
 </div>
 </section>
 
@@ -204,18 +310,37 @@ footer .fbiz{font-size:13px;letter-spacing:.02em;color:var(--mut);margin:0 0 6px
 <div class="wrap">
 <h2>Every scene deserves<br>the right car.</h2>
 <p class="ko">약속된 시간과 장소에, 완벽한 컨디션으로.</p>
+<button class="cta askb ask-open" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4c-4.97 0-9 3.13-9 7 0 2.5 1.7 4.7 4.25 5.94L6.5 20l3.9-2.2c.52.07 1.05.1 1.6.1 4.97 0 9-3.13 9-7s-4.03-7-9-7z"/><path d="M8 11h.01M12 11h.01M16 11h.01" stroke-width="2.4"/></svg><span>차량 문의하기</span><i class="arr" aria-hidden="true">→</i></button>
 </div>
 </section>
 </main>
 
 <footer>
 <div class="wrap">
-<div class="fbrand"><img src="logo/rentdream-white.png" alt="RentDream" width="95" height="26"><span class="fsep" aria-hidden="true"></span><a class="fcontact" href="tel:+821067900580"><span>대표 조영직</span>010 6790 0580</a></div>
+<div class="fbrand"><img src="logo/rentdream-white.png" alt="RentDream" width="95" height="26"><span class="fsep" aria-hidden="true"></span><div class="fcontact"><span>대표 조영직</span><a href="tel:+821067900580">010 6790 0580</a><a class="fmail" href="mailto:contact@rentdream.kr">contact@rentdream.kr</a></div></div>
 <p class="fbiz">㈜렌트드림 · 사업자등록번호 450-81-00922</p>
 <p>© 2026 RentDream. All rights reserved.</p>
 </div>
 </footer>
 
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="차량 크게 보기">
+<button class="x" id="lbx" type="button" aria-label="닫기">×</button>
+<button class="nv pv" id="lbp" type="button" aria-label="이전 차량">‹</button>
+<button class="nv nx" id="lbn" type="button" aria-label="다음 차량">›</button>
+<figure id="lbf"><img id="lbi" alt=""><figcaption><b id="lbk"></b><span id="lbe"></span></figcaption></figure>
+<div class="hint">좌우로 넘기기 · 아래로 밀어 닫기</div>
+</div>
+
+<div class="sh" id="sh" role="dialog" aria-modal="true" aria-labelledby="shT">
+<div class="pn">
+<button class="cx" id="shx" type="button" aria-label="닫기">×</button>
+<h4 id="shT">차량 문의</h4>
+<p>편하신 방법으로 연락 주세요.</p>
+<a class="op" id="opK" href="https://open.kakao.com/o/s6Dioohf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4c-4.97 0-9 3.13-9 7 0 2.5 1.7 4.7 4.25 5.94L6.5 20l3.9-2.2c.52.07 1.05.1 1.6.1 4.97 0 9-3.13 9-7s-4.03-7-9-7z"/></svg><span><b>카카오톡으로 문의</b><small>오픈채팅으로 바로 연결</small></span><em>→</em></a>
+<a class="op" href="tel:+821067900580"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3.5h3.2l1.6 4.3-2.1 1.4a11.5 11.5 0 0 0 5.1 5.1l1.4-2.1 4.3 1.6V17a2 2 0 0 1-2.1 2A15.5 15.5 0 0 1 3 5.6 2 2 0 0 1 5 3.5z"/></svg><span><b>전화로 상담</b><small>010 6790 0580</small></span><em>→</em></a>
+</div>
+</div>
 <script>
 {
 const hd=document.getElementById('hd');
@@ -223,13 +348,56 @@ const onS=()=>hd.classList.toggle('on',scrollY>40);
 addEventListener('scroll',onS,{passive:true});onS();
 
 const cars=[
-['12cilindri','V12 그랜드 투어러','Ferrari 12Cilindri'],
-['huracan','슈퍼카','Lamborghini Huracán EVO'],
-['296gts','하이브리드 스파이더','Ferrari 296 GTS'],
-['ghost','플래그십 세단','Rolls-Royce Ghost'],
-['dawn','컨버터블','Rolls-Royce Dawn'],
-['urus','퍼포먼스 SUV','Lamborghini Urus']];
-document.getElementById('cars').innerHTML=cars.map(c=>`<div class="car"><img src="img/${c[0]}.jpg" alt="${c[2]}" width="960" height="527" loading="lazy"><h3>${c[1]}</h3><p>${c[2]}</p></div>`).join('');
+['phantom','롤스로이스 팬텀','Rolls-Royce Phantom'],
+['maybach','벤츠 마이바흐 S580','Mercedes-Maybach S580'],
+['12cilindri','페라리 12칠린드리','Ferrari 12Cilindri'],
+['urus','람보르기니 우루스','Lamborghini Urus'],
+['911ts','포르쉐 911 터보 S','Porsche 911 Turbo S'],
+['g63','메르세데스-AMG G63','Mercedes-AMG G63'],
+['ghost','롤스로이스 고스트','Rolls-Royce Ghost'],
+['spectre','롤스로이스 스펙터','Rolls-Royce Spectre'],
+['dawn','롤스로이스 던','Rolls-Royce Dawn'],
+['bentayga','벤틀리 벤테이가 EWB','Bentley Bentayga EWB'],
+['gtcspeed','벤틀리 GTC 스피드','Bentley GTC Speed'],
+['296gts','페라리 296 GTS','Ferrari 296 GTS'],
+['purosangue','페라리 푸로산게','Ferrari Purosangue'],
+['temerario','람보르기니 테메라리오','Lamborghini Temerario'],
+['huracan','람보르기니 우라칸 EVO','Lamborghini Huracán EVO'],
+['taycan','포르쉐 타이칸 터보 GT','Porsche Taycan Turbo GT'],
+['rrauto','레인지로버 오토바이오그래피','Range Rover Autobiography'],
+['rrsport','레인지로버 스포츠 SV','Range Rover Sport SV']];
+document.getElementById('cars').innerHTML=cars.map((c,i)=>`<div class="car" data-i="${i}" role="button" tabindex="0" aria-label="${c[1]} 크게 보기"><img src="img/${c[0]}.jpg" alt="${c[2]}" width="960" height="527" loading="lazy"><h3>${c[1]}</h3><p>${c[2]}</p></div>`).join('');
+
+const cb=document.getElementById('cars'),mb=document.getElementById('more');
+mb.addEventListener('click',()=>{const o=cb.classList.toggle('open');mb.querySelector('span').textContent=o?'접기':'차량 더 보기';if(!o)document.getElementById('collection').scrollIntoView({behavior:'smooth'});});
+
+const sh=document.getElementById('sh');
+const openSh=()=>{sh.classList.add('on');document.body.style.overflow='hidden';};
+const closeSh=()=>{sh.classList.remove('on');document.body.style.overflow='';};
+document.querySelectorAll('.ask-open').forEach(b=>b.addEventListener('click',openSh));
+document.getElementById('shx').onclick=closeSh;
+sh.addEventListener('click',e=>{if(e.target===sh)closeSh();});
+addEventListener('keydown',e=>{if(e.key==='Escape'&&sh.classList.contains('on'))closeSh();});
+
+const lb=document.getElementById('lb'),lbf=document.getElementById('lbf'),lbi=document.getElementById('lbi');let cur=0,last=null;
+function show(i){cur=(i+cars.length)%cars.length;const c=cars[cur];lbi.src=`img/${c[0]}.jpg`;lbi.alt=c[2];document.getElementById('lbk').textContent=c[1];document.getElementById('lbe').textContent=c[2];}
+function openLb(i){last=document.activeElement;show(i);lb.classList.add('on');document.body.style.overflow='hidden';document.getElementById('lbx').focus({preventScroll:true});}
+function closeLb(){lb.classList.remove('on');document.body.style.overflow='';lbf.style.transform='';lbf.style.opacity='';if(last)last.focus({preventScroll:true});}
+cb.addEventListener('click',e=>{const c=e.target.closest('.car');if(c)openLb(+c.dataset.i);});
+cb.addEventListener('keydown',e=>{const c=e.target.closest('.car');if(c&&(e.key==='Enter'||e.key===' ')){e.preventDefault();openLb(+c.dataset.i);}});
+document.getElementById('lbx').onclick=closeLb;
+document.getElementById('lbp').onclick=e=>{e.stopPropagation();show(cur-1)};
+document.getElementById('lbn').onclick=e=>{e.stopPropagation();show(cur+1)};
+lb.addEventListener('click',e=>{if(e.target===lb||e.target.classList.contains('hint'))closeLb();});
+addEventListener('keydown',e=>{if(!lb.classList.contains('on'))return;if(e.key==='Escape')closeLb();if(e.key==='ArrowLeft')show(cur-1);if(e.key==='ArrowRight')show(cur+1);});
+let sx=0,sy=0,dx=0,dy=0,drag=false;
+lb.addEventListener('touchstart',e=>{const t=e.touches[0];sx=t.clientX;sy=t.clientY;dx=dy=0;drag=true;lbf.style.transition='none';},{passive:true});
+lb.addEventListener('touchmove',e=>{if(!drag)return;const t=e.touches[0];dx=t.clientX-sx;dy=t.clientY-sy;if(Math.abs(dy)>Math.abs(dx)&&dy>0){lbf.style.transform=`translateY(${dy}px)`;lbf.style.opacity=Math.max(.3,1-dy/400);}else{lbf.style.transform=`translateX(${dx}px)`;}},{passive:true});
+lb.addEventListener('touchend',()=>{if(!drag)return;drag=false;lbf.style.transition='';const ax=Math.abs(dx),ay=Math.abs(dy);
+ if(ay>ax&&dy>90){closeLb();return;}
+ if(ax>ay&&ax>60){const d=dx<0?1:-1;lbf.style.transform=`translateX(${-d*40}px)`;lbf.style.opacity='0';setTimeout(()=>{show(cur+d);lbf.style.transition='none';lbf.style.transform=`translateX(${d*40}px)`;requestAnimationFrame(()=>{lbf.style.transition='';lbf.style.transform='';lbf.style.opacity='';});},180);return;}
+ lbf.style.transform='';lbf.style.opacity='';
+ if(ax<8&&ay<8&&!lbf.contains(document.elementFromPoint(sx,sy)))closeLb();});
 
 const svc=[
 ['Launch','신차 런칭 · 비교시승','비교 모델 셀렉션부터 행사 운영까지'],
