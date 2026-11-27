@@ -2,22 +2,6 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
-<!-- Google Analytics (렌트드림) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JQEKRW1Q8Z"></script>
-<script>
-window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
-gtag('js',new Date());gtag('config','G-JQEKRW1Q8Z');
-document.addEventListener('click',function(e){
- var t=e.target.closest&&e.target.closest('a[href],.ask-open');if(!t)return;
- var h=t.getAttribute('href')||'',ev=null;
- if(h.indexOf('tel:')===0)ev='click_call';
- else if(h.indexOf('open.kakao.com')>-1)ev='click_kakao';
- else if(h.indexOf('t.me/')>-1)ev='click_telegram';
- else if(h.indexOf('mailto:')===0)ev='click_email';
- else if(t.classList.contains('ask-open'))ev='open_inquiry';
- if(ev)gtag('event',ev,{page_path:location.pathname});
-},true);
-</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>렌트드림 | 수입차·슈퍼카 렌트, 브랜드·프로덕션 차량</title>
 <meta name="description" content="수입차·슈퍼카 단기렌트부터 런칭·시승·R&amp;D·촬영·의전 차량까지. 롤스로이스·벤틀리·페라리·람보르기니·포르쉐, 프리미엄 모빌리티 파트너 렌트드림.">
@@ -339,7 +323,6 @@ section{padding:72px 0}
 .mn .mc .t{background:linear-gradient(145deg,#d9bd86,#a8884f)}.mn .mc .k{background:#FEE500}.mn .mc .g{background:linear-gradient(160deg,#37b5f0,#1e96d6)}
 .mn .mf{flex:none;margin-top:16px;text-align:center;font-size:12px;color:var(--mut);letter-spacing:.04em}
 }
-footer .fj{opacity:.7}
 </style>
 </head>
 <body>
@@ -385,7 +368,26 @@ footer .fj{opacity:.7}
 <span class="lab">Fleet</span>
 <h2>The Collection</h2>
 <p class="ko">국산차부터 슈퍼카까지 <br class="mbr">어떤 현장이든 맞는 차량을 준비합니다.</p>
-<div class="cars" id="cars"></div>
+<div class="cars" id="cars">
+<div class="car" data-i="0" role="button" tabindex="0" aria-label="롤스로이스 팬텀 크게 보기"><img src="img/phantom.jpg" alt="Rolls-Royce Phantom" width="960" height="527" loading="lazy"><h3>롤스로이스 팬텀</h3><p>Rolls-Royce Phantom</p></div>
+<div class="car" data-i="1" role="button" tabindex="0" aria-label="벤츠 마이바흐 S580 크게 보기"><img src="img/maybach.jpg" alt="Mercedes-Maybach S580" width="960" height="527" loading="lazy"><h3>벤츠 마이바흐 S580</h3><p>Mercedes-Maybach S580</p></div>
+<div class="car" data-i="2" role="button" tabindex="0" aria-label="페라리 12칠린드리 크게 보기"><img src="img/12cilindri.jpg" alt="Ferrari 12Cilindri" width="960" height="527" loading="lazy"><h3>페라리 12칠린드리</h3><p>Ferrari 12Cilindri</p></div>
+<div class="car" data-i="3" role="button" tabindex="0" aria-label="람보르기니 우루스 크게 보기"><img src="img/urus.jpg" alt="Lamborghini Urus" width="960" height="527" loading="lazy"><h3>람보르기니 우루스</h3><p>Lamborghini Urus</p></div>
+<div class="car" data-i="4" role="button" tabindex="0" aria-label="포르쉐 911 터보 S 크게 보기"><img src="img/911ts.jpg" alt="Porsche 911 Turbo S" width="960" height="527" loading="lazy"><h3>포르쉐 911 터보 S</h3><p>Porsche 911 Turbo S</p></div>
+<div class="car" data-i="5" role="button" tabindex="0" aria-label="메르세데스-AMG G63 크게 보기"><img src="img/g63.jpg" alt="Mercedes-AMG G63" width="960" height="527" loading="lazy"><h3>메르세데스-AMG G63</h3><p>Mercedes-AMG G63</p></div>
+<div class="car" data-i="6" role="button" tabindex="0" aria-label="롤스로이스 고스트 크게 보기"><img src="img/ghost.jpg" alt="Rolls-Royce Ghost" width="960" height="527" loading="lazy"><h3>롤스로이스 고스트</h3><p>Rolls-Royce Ghost</p></div>
+<div class="car" data-i="7" role="button" tabindex="0" aria-label="롤스로이스 스펙터 크게 보기"><img src="img/spectre.jpg" alt="Rolls-Royce Spectre" width="960" height="527" loading="lazy"><h3>롤스로이스 스펙터</h3><p>Rolls-Royce Spectre</p></div>
+<div class="car" data-i="8" role="button" tabindex="0" aria-label="롤스로이스 던 크게 보기"><img src="img/dawn.jpg" alt="Rolls-Royce Dawn" width="960" height="527" loading="lazy"><h3>롤스로이스 던</h3><p>Rolls-Royce Dawn</p></div>
+<div class="car" data-i="9" role="button" tabindex="0" aria-label="벤틀리 벤테이가 EWB 크게 보기"><img src="img/bentayga.jpg" alt="Bentley Bentayga EWB" width="960" height="527" loading="lazy"><h3>벤틀리 벤테이가 EWB</h3><p>Bentley Bentayga EWB</p></div>
+<div class="car" data-i="10" role="button" tabindex="0" aria-label="벤틀리 GTC 스피드 크게 보기"><img src="img/gtcspeed.jpg" alt="Bentley GTC Speed" width="960" height="527" loading="lazy"><h3>벤틀리 GTC 스피드</h3><p>Bentley GTC Speed</p></div>
+<div class="car" data-i="11" role="button" tabindex="0" aria-label="페라리 296 GTS 크게 보기"><img src="img/296gts.jpg" alt="Ferrari 296 GTS" width="960" height="527" loading="lazy"><h3>페라리 296 GTS</h3><p>Ferrari 296 GTS</p></div>
+<div class="car" data-i="12" role="button" tabindex="0" aria-label="페라리 푸로산게 크게 보기"><img src="img/purosangue.jpg" alt="Ferrari Purosangue" width="960" height="527" loading="lazy"><h3>페라리 푸로산게</h3><p>Ferrari Purosangue</p></div>
+<div class="car" data-i="13" role="button" tabindex="0" aria-label="람보르기니 테메라리오 크게 보기"><img src="img/temerario.jpg" alt="Lamborghini Temerario" width="960" height="527" loading="lazy"><h3>람보르기니 테메라리오</h3><p>Lamborghini Temerario</p></div>
+<div class="car" data-i="14" role="button" tabindex="0" aria-label="람보르기니 우라칸 EVO 크게 보기"><img src="img/huracan.jpg" alt="Lamborghini Huracán EVO" width="960" height="527" loading="lazy"><h3>람보르기니 우라칸 EVO</h3><p>Lamborghini Huracán EVO</p></div>
+<div class="car" data-i="15" role="button" tabindex="0" aria-label="포르쉐 타이칸 터보 GT 크게 보기"><img src="img/taycan.jpg" alt="Porsche Taycan Turbo GT" width="960" height="527" loading="lazy"><h3>포르쉐 타이칸 터보 GT</h3><p>Porsche Taycan Turbo GT</p></div>
+<div class="car" data-i="16" role="button" tabindex="0" aria-label="레인지로버 오토바이오그래피 크게 보기"><img src="img/rrauto.jpg" alt="Range Rover Autobiography" width="960" height="527" loading="lazy"><h3>레인지로버 오토바이오그래피</h3><p>Range Rover Autobiography</p></div>
+<div class="car" data-i="17" role="button" tabindex="0" aria-label="레인지로버 스포츠 SV 크게 보기"><img src="img/rrsport.jpg" alt="Range Rover Sport SV" width="960" height="527" loading="lazy"><h3>레인지로버 스포츠 SV</h3><p>Range Rover Sport SV</p></div>
+</div>
 <button class="more" id="more" type="button"><span>차량 더 보기</span><i>↓</i></button>
 <p class="foot">찾으시는 차량이 라인업에 없어도 괜찮습니다.<br>문의 주시면 원하시는 모델을 찾아 안내해 드립니다.<button class="cta askb ask-open" id="ask" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4c-4.97 0-9 3.13-9 7 0 2.5 1.7 4.7 4.25 5.94L6.5 20l3.9-2.2c.52.07 1.05.1 1.6.1 4.97 0 9-3.13 9-7s-4.03-7-9-7z"/><path d="M8 11h.01M12 11h.01M16 11h.01" stroke-width="2.4"/></svg><span>차량 문의하기</span><i class="arr" aria-hidden="true">→</i></button></p>
 </div>
@@ -396,7 +398,15 @@ footer .fj{opacity:.7}
 <span class="lab">Services</span>
 <h2>Where We Perform</h2>
 <p class="ko">브랜드의 중요한 순간에 함께합니다.</p>
-<div class="svc" id="svc"></div>
+<div class="svc" id="svc">
+<div class="cell"><em>LAUNCH</em><h3><span>신차 런칭</span><i class="dt"> · </i><span>비교시승</span></h3><p>비교 모델 셀렉션부터 행사 운영까지</p></div>
+<div class="cell"><em>CAMPAIGN</em><h3><span>광고 · 캠페인</span><i class="dt"> · </i><span>프로덕션</span></h3><p>브랜드 무드에 맞춘 모델과 컬러</p></div>
+<div class="cell"><em>FILM &amp; SERIES</em><h3><span>영화 · 드라마</span><i class="dt"> · </i><span>OTT</span></h3><p>긴 촬영에도 동일한 컨디션</p></div>
+<div class="cell"><em>TRAINING</em><h3><span>딜러 트레이닝</span><i class="dt"> · </i><span>시승 콘보이</span></h3><p>장거리 시승 프로그램 운영</p></div>
+<div class="cell"><em>R&amp;D</em><h3><span>연구 · 전시</span></h3><p>벤치마킹과 전시 프로그램</p></div>
+<div class="cell"><em>CORPORATE</em><h3><span>기업 의전</span><i class="dt"> · </i><span>장기 운영</span></h3><p>임원 의전과 업무 차량</p></div>
+<div class="cell c7"><em>PRIVATE</em><h3><span>수입차 · 슈퍼카</span><i class="dt"> · </i><span>단기렌트</span></h3><p>하루부터 한 달까지, 원하는 모델로</p></div>
+</div>
 </div>
 </section>
 
@@ -405,7 +415,14 @@ footer .fj{opacity:.7}
 <span class="lab">Portfolio</span>
 <h2>Selected Works</h2>
 <p class="ko">차량이 주인공이 되는 순간을 함께해 왔습니다.</p>
-<div class="wk" id="wk"></div>
+<div class="wk" id="wk">
+<div class="w w1"><span>수입차 브랜드</span><b><span>런칭 · 시승 · 이벤트</span><span>딜러 트레이닝 · 콘보이</span></b></div>
+<div class="w"><span>완성차 연구소</span><b><span>연구 · 전시</span><i class="dt"> · </i><span>차량 지원</span></b></div>
+<div class="w"><span>수입차 교육센터</span><b><span>트레이닝</span><i class="dt"> · </i><span>차량 공급</span></b></div>
+<div class="w"><span>글로벌 OTT</span><b><span>오리지널 시리즈</span><i class="dt"> · </i><span>프로덕션</span></b></div>
+<div class="w"><span>이벤트 에이전시</span><b><span>비교시승</span><i class="dt"> · </i><span>이벤트 운영</span></b></div>
+<div class="w"><span>개인 · 법인 고객</span><b><span>수입차 · 슈퍼카</span><i class="dt"> · </i><span>단기렌트</span></b></div>
+</div>
 </div>
 </section>
 
@@ -422,7 +439,7 @@ footer .fj{opacity:.7}
 <div class="wrap">
 <div class="fbrand"><img src="logo/rentdream-white.png" alt="RentDream" width="95" height="26"><span class="fsep" aria-hidden="true"></span><div class="fcontact"><span>대표 조영직</span><a href="tel:+821067900580">010 6790 0580</a><a class="fmail" href="mailto:contact@rentdream.kr">contact@rentdream.kr</a></div></div>
 <p class="fbiz">㈜렌트드림 · 사업자등록번호 450-81-00922</p>
-<p>© 2026 RentDream. All rights reserved.<span class="fj"> · <a href="/journal/">Journal</a></span></p>
+<p>© 2026 RentDream. All rights reserved.</p>
 </div>
 </footer>
 
@@ -475,7 +492,6 @@ const cars=[
 ['taycan','포르쉐 타이칸 터보 GT','Porsche Taycan Turbo GT'],
 ['rrauto','레인지로버 오토바이오그래피','Range Rover Autobiography'],
 ['rrsport','레인지로버 스포츠 SV','Range Rover Sport SV']];
-document.getElementById('cars').innerHTML=cars.map((c,i)=>`<div class="car" data-i="${i}" role="button" tabindex="0" aria-label="${c[1]} 크게 보기"><img src="img/${c[0]}.jpg" alt="${c[2]}" width="960" height="527" loading="lazy"><h3>${c[1]}</h3><p>${c[2]}</p></div>`).join('');
 
 const cb=document.getElementById('cars'),mb=document.getElementById('more');
 mb.addEventListener('click',()=>{const o=cb.classList.toggle('open');mb.querySelector('span').textContent=o?'접기':'차량 더 보기';if(!o)document.getElementById('collection').scrollIntoView({behavior:'smooth'});});
@@ -508,25 +524,7 @@ lb.addEventListener('touchend',()=>{if(!drag)return;drag=false;lbf.style.transit
  lbf.style.transform='';lbf.style.opacity='';
  if(ax<8&&ay<8&&!lbf.contains(document.elementFromPoint(sx,sy)))closeLb();});
 
-const svc=[
-['Launch','신차 런칭|비교시승','비교 모델 셀렉션부터 행사 운영까지'],
-['Campaign','광고 · 캠페인|프로덕션','브랜드 무드에 맞춘 모델과 컬러'],
-['Film & Series','영화 · 드라마|OTT','긴 촬영에도 동일한 컨디션'],
-['Training','딜러 트레이닝|시승 콘보이','장거리 시승 프로그램 운영'],
-['R&D','연구 · 전시','벤치마킹과 전시 프로그램'],
-['Corporate','기업 의전|장기 운영','임원 의전과 업무 차량'],
-['Private','수입차 · 슈퍼카|단기렌트','하루부터 한 달까지, 원하는 모델로']];
-const brk=t=>t.split('|').map(x=>`<span>${x}</span>`).join('<i class="dt"> · </i>');
-document.getElementById('svc').innerHTML=svc.map((s,i)=>`<div class="cell${i==6?' c7':''}"><em>${s[0].toUpperCase().replace('&','&amp;')}</em><h3>${brk(s[1])}</h3><p>${s[2]}</p></div>`).join('');
 
-const wk=[
-['수입차 브랜드','<span>런칭 · 시승 · 이벤트</span><span>딜러 트레이닝 · 콘보이</span>'],
-['완성차 연구소',brk('연구 · 전시|차량 지원')],
-['수입차 교육센터',brk('트레이닝|차량 공급')],
-['글로벌 OTT',brk('오리지널 시리즈|프로덕션')],
-['이벤트 에이전시',brk('비교시승|이벤트 운영')],
-['개인 · 법인 고객',brk('수입차 · 슈퍼카|단기렌트')]];
-document.getElementById('wk').innerHTML=wk.map((w,i)=>`<div class="w${i?'':' w1'}"><span>${w[0]}</span><b>${w[1]}</b></div>`).join('');
 }
 </script>
 
