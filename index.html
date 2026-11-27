@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>렌트드림 | 브랜드·프로덕션 차량 렌트</title>
-<meta name="description" content="런칭·시승·R&amp;D·촬영·의전 차량을 한 곳에서. 브랜드와 프로덕션을 위한 프리미엄 모빌리티 파트너, 렌트드림.">
+<title>렌트드림 | 수입차·슈퍼카 렌트, 브랜드·프로덕션 차량</title>
+<meta name="description" content="수입차·슈퍼카 단기렌트부터 런칭·시승·R&amp;D·촬영·의전 차량까지. 롤스로이스·벤틀리·페라리·람보르기니·포르쉐, 프리미엄 모빌리티 파트너 렌트드림.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="RentDream">
 <meta property="og:title" content="렌트드림 | 브랜드·프로덕션 차량 렌트">
@@ -255,6 +255,73 @@ animation:ctaB 3.2s linear infinite,ctaG 3.2s ease-in-out infinite}
 .fab::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 30%,rgba(255,236,190,.16) 48%,rgba(255,248,225,.28) 50%,rgba(255,236,190,.16) 52%,transparent 70%);transform:translateX(-120%);animation:fabS 3.6s ease-in-out infinite;pointer-events:none}
 }
 @keyframes fabS{0%,55%{transform:translateX(-120%)}85%,100%{transform:translateX(120%)}}
+
+/* v3: layout tightening */
+.wk{grid-template-columns:repeat(3,minmax(0,1fr))}
+.w{border-left:0!important;padding:44px 14px 42px}
+.w+.w{border-left:1px solid var(--line)!important}
+.w:nth-child(3n+1){border-left:0!important}
+.w b span{display:block;white-space:nowrap;font-size:inherit;letter-spacing:inherit;color:inherit}
+.w b span+span{margin-top:2px}
+.w .dt{display:none}
+.svc h3 span{white-space:nowrap}
+@media(max-width:900px){.wk{grid-template-columns:repeat(2,minmax(0,1fr))}.w+.w,.w:nth-child(3n+1){border-left:0!important}.w:nth-child(2n){border-left:1px solid var(--line)!important}}
+@media(max-width:640px){
+section{padding:72px 0}
+.close{padding:88px 0}
+.lab{margin-bottom:20px}
+.svc,.wk{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:40px}
+.cell{padding:26px 10px 24px;border-left:0!important}
+.cell:nth-child(2n){border-left:1px solid var(--line)!important}
+.cell em{font-size:9.5px;letter-spacing:.24em;margin-bottom:12px}
+.cell h3{font-size:15.5px;line-height:1.5}
+.cell h3 span,.w b span{display:block}
+.cell .dt,.w .dt{display:none}
+.cell p{display:none}
+.w{padding:24px 10px 22px}
+.w>span{font-size:11.5px;letter-spacing:.1em}
+.w b{margin-top:10px;font-size:14.5px;line-height:1.55}
+.w1 b{font-size:14.5px}
+.figs{margin-top:44px}
+.fig{padding:30px 8px 28px}
+.coll .cars{margin-top:44px}
+.more{border-radius:999px;border-color:rgba(201,169,110,.7);padding:14px 28px;margin-top:34px}
+.hero .cue{height:30px;margin:0 auto 8px}
+.fcontact a{display:inline-block;padding:12px 8px;margin:-12px -8px}
+}
+
+/* v4: private rental */
+.cell.c7{grid-column:1/-1;border-left:0!important;background:linear-gradient(90deg,transparent,rgba(201,169,110,.06),transparent)}
+.cell.c7 h3 span{display:inline}
+.cell.c7 .dt{display:inline!important}
+
+/* v5: mobile menu */
+.mbtn,.mn{display:none}
+@media(max-width:640px){
+.nav{position:relative}
+.mbtn{display:flex;flex-direction:column;justify-content:center;gap:6px;position:absolute;right:2px;top:50%;width:44px;height:44px;margin-top:-22px;padding:0 10px;background:none;border:0;cursor:pointer}
+.mbtn i{display:block;height:1.5px;background:var(--ink);border-radius:1px}
+.mbtn i:last-child{width:62%;margin-left:auto}
+.mn{display:flex;flex-direction:column;position:fixed;inset:0;z-index:95;background:rgba(5,5,6,.97);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);padding:0 28px calc(34px + env(safe-area-inset-bottom));opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
+.mn.on{opacity:1;visibility:visible}
+.mn .mt{position:relative;display:flex;align-items:center;justify-content:center;height:84px;flex:none}
+.mn .mt img{height:36px;width:auto}
+.mn .mx{position:absolute;right:-12px;top:50%;width:44px;height:44px;margin-top:-22px;background:none;border:0;cursor:pointer}
+.mn .mx::before,.mn .mx::after{content:"";position:absolute;left:12px;right:12px;top:50%;height:1.5px;background:var(--ink);transform:rotate(45deg)}
+.mn .mx::after{transform:rotate(-45deg)}
+.mn nav{flex:1;display:flex;flex-direction:column;justify-content:center;gap:6px}
+.mn nav a{display:flex;align-items:baseline;justify-content:space-between;padding:18px 0;border-bottom:1px solid var(--line);opacity:0;transform:translateY(14px);transition:opacity .45s,transform .45s}
+.mn nav a:first-child{border-top:1px solid var(--line)}
+.mn nav a b{font:500 34px/1 "Cormorant Garamond",serif;letter-spacing:.01em;color:var(--ink)}
+.mn nav a span{font-size:13px;color:var(--sub);letter-spacing:.04em}
+.mn.on nav a{opacity:1;transform:none}
+.mn.on nav a:nth-child(2){transition-delay:.05s}.mn.on nav a:nth-child(3){transition-delay:.1s}.mn.on nav a:nth-child(4){transition-delay:.15s}
+.mn .mc{flex:none;display:flex;justify-content:center;gap:18px}
+.mn .mc a{display:grid;place-items:center;width:48px;height:48px;border-radius:14px}
+.mn .mc svg{width:24px;height:24px}
+.mn .mc .t{background:linear-gradient(145deg,#d9bd86,#a8884f)}.mn .mc .k{background:#FEE500}.mn .mc .g{background:linear-gradient(160deg,#37b5f0,#1e96d6)}
+.mn .mf{flex:none;margin-top:16px;text-align:center;font-size:12px;color:var(--mut);letter-spacing:.04em}
+}
 </style>
 </head>
 <body>
@@ -264,6 +331,7 @@ animation:ctaB 3.2s linear infinite,ctaG 3.2s ease-in-out infinite}
 <nav class="l" aria-label="왼쪽 메뉴"><a class="m" href="#about">ABOUT</a><a class="m" href="#collection">COLLECTION</a></nav>
 <a class="logo" href="#top" aria-label="RentDream"><img src="logo/rentdream-white.png" alt="RentDream" width="109" height="30"></a>
 <nav class="r" aria-label="오른쪽 메뉴"><a class="m" href="#services">SERVICES</a><a class="m" href="#works">WORKS</a></nav>
+<button class="mbtn" id="mbtn" type="button" aria-label="메뉴 열기" aria-controls="mn" aria-expanded="false"><i></i><i></i></button>
 </div>
 </header>
 
@@ -349,6 +417,12 @@ animation:ctaB 3.2s linear infinite,ctaG 3.2s ease-in-out infinite}
 <div class="hint">좌우로 넘기기 · 아래로 밀어 닫기</div>
 </div>
 
+<div class="mn" id="mn" role="dialog" aria-modal="true" aria-label="메뉴">
+<div class="mt"><img src="logo/rentdream-white.png" alt="RentDream" width="109" height="30"><button class="mx" id="mx" type="button" aria-label="메뉴 닫기"></button></div>
+<nav><a href="#about"><b>About</b><span>회사 소개</span></a><a href="#collection"><b>Collection</b><span>보유 차량</span></a><a href="#services"><b>Services</b><span>서비스</span></a><a href="#works"><b>Works</b><span>실적</span></a></nav>
+<div class="mc"><a class="t" href="tel:+821067900580" aria-label="전화 상담"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#111" d="M6.6 3.2c.6-.3 1.3 0 1.6.6l1.5 3.3c.2.5.1 1.1-.3 1.5L8 10c1.2 2.4 3.6 4.8 6 6l1.4-1.4c.4-.4 1-.5 1.5-.3l3.3 1.5c.6.3.9 1 .6 1.6l-.9 2.2c-.3.8-1.1 1.3-2 1.2C9.6 20.2 3.8 14.4 3.2 6.1c-.1-.9.4-1.7 1.2-2z"/></svg></a><a class="k" href="https://open.kakao.com/o/s6Dioohf" target="_blank" rel="noopener" aria-label="카카오톡 문의"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#3A1D1D" d="M12 3.6c-5.2 0-9.4 3.3-9.4 7.3 0 2.6 1.7 4.9 4.3 6.2l-1 3.8c-.1.4.3.7.6.5l4.6-3.1c.3 0 .6.1.9.1 5.2 0 9.4-3.3 9.4-7.4S17.2 3.6 12 3.6z"/></svg></a><a class="g" href="https://t.me/rentdream_bot" target="_blank" rel="noopener" aria-label="텔레그램 문의"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M20.7 4.3 3.3 11c-1 .4-1 1.8.1 2.1l4.2 1.3 1.6 5c.2.7 1.1.9 1.6.4l2.4-2.3 4.5 3.3c.6.4 1.4.1 1.6-.6L22 5.6c.2-.9-.6-1.6-1.3-1.3zM9.6 14.1l8-6.2-6.5 7.3-.3 2.9z"/></svg></a></div>
+<p class="mf">contact@rentdream.kr</p>
+</div>
 <button class="fab ask-open" id="fab" type="button" aria-label="차량 문의하기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4c-4.97 0-9 3.13-9 7 0 2.5 1.7 4.7 4.25 5.94L6.5 20l3.9-2.2c.52.07 1.05.1 1.6.1 4.97 0 9-3.13 9-7s-4.03-7-9-7z"/><path d="M8 11h.01M12 11h.01M16 11h.01" stroke-width="2.4"/></svg><span>차량 문의하기</span></button>
 <div class="sh" id="sh" role="dialog" aria-modal="true" aria-labelledby="shT">
 <div class="pn"><i class="hd" aria-hidden="true"></i>
@@ -417,37 +491,48 @@ lb.addEventListener('touchend',()=>{if(!drag)return;drag=false;lbf.style.transit
  if(ax<8&&ay<8&&!lbf.contains(document.elementFromPoint(sx,sy)))closeLb();});
 
 const svc=[
-['Launch','신차 런칭 · 비교시승','비교 모델 셀렉션부터 행사 운영까지'],
-['Campaign','광고 · 캠페인 프로덕션','브랜드 무드에 맞춘 모델과 컬러'],
-['Film & Series','영화 · 드라마 · OTT','긴 촬영에도 동일한 컨디션'],
-['Training','딜러 트레이닝 · 시승 콘보이','장거리 시승 프로그램 운영'],
+['Launch','신차 런칭|비교시승','비교 모델 셀렉션부터 행사 운영까지'],
+['Campaign','광고 · 캠페인|프로덕션','브랜드 무드에 맞춘 모델과 컬러'],
+['Film & Series','영화 · 드라마|OTT','긴 촬영에도 동일한 컨디션'],
+['Training','딜러 트레이닝|시승 콘보이','장거리 시승 프로그램 운영'],
 ['R&D','연구 · 전시','벤치마킹과 전시 프로그램'],
-['Corporate','기업 의전 · 장기 운영','임원 의전과 업무 차량']];
-document.getElementById('svc').innerHTML=svc.map(s=>`<div class="cell"><em>${s[0].toUpperCase().replace('&','&amp;')}</em><h3>${s[1]}</h3><p>${s[2]}</p></div>`).join('');
+['Corporate','기업 의전|장기 운영','임원 의전과 업무 차량'],
+['Private','수입차 · 슈퍼카|단기렌트','하루부터 한 달까지, 원하는 모델로']];
+const brk=t=>t.split('|').map(x=>`<span>${x}</span>`).join('<i class="dt"> · </i>');
+document.getElementById('svc').innerHTML=svc.map((s,i)=>`<div class="cell${i==6?' c7':''}"><em>${s[0].toUpperCase().replace('&','&amp;')}</em><h3>${brk(s[1])}</h3><p>${s[2]}</p></div>`).join('');
 
 const wk=[
-['수입차 브랜드','신차 런칭 비교시승'],
-['수입차 브랜드','장거리 시승 콘보이<br>딜러 트레이닝'],
-['수입차 브랜드','SUV 런칭 시승 프로그램'],
-['수입차 브랜드','브랜드 이벤트 운영'],
-['완성차 연구소','연구 · 전시 차량 지원'],
-['수입차 교육센터','트레이닝 차량 공급'],
-['글로벌 OTT','오리지널 시리즈 프로덕션'],
-['이벤트 에이전시','비교시승 이벤트 운영']];
-document.getElementById('wk').innerHTML=wk.map(w=>`<div class="w"><span>${w[0]}</span><b>${w[1]}</b></div>`).join('');
+['수입차 브랜드','<span>런칭 · 시승 · 이벤트</span><span>딜러 트레이닝 · 콘보이</span>'],
+['완성차 연구소',brk('연구 · 전시|차량 지원')],
+['수입차 교육센터',brk('트레이닝|차량 공급')],
+['글로벌 OTT',brk('오리지널 시리즈|프로덕션')],
+['이벤트 에이전시',brk('비교시승|이벤트 운영')],
+['개인 · 법인 고객',brk('수입차 · 슈퍼카|단기렌트')]];
+document.getElementById('wk').innerHTML=wk.map((w,i)=>`<div class="w${i?'':' w1'}"><span>${w[0]}</span><b>${w[1]}</b></div>`).join('');
 }
 </script>
 
 <script>
 (()=>{const fab=document.getElementById('fab'),sh=document.getElementById('sh'),lb=document.getElementById('lb');
 const vis={hero:true,end:false};
-const upd=()=>fab.classList.toggle('on',!vis.hero&&!vis.end&&!sh.classList.contains('on')&&!lb.classList.contains('on'));
+const mnv=document.getElementById('mn');
+const upd=()=>fab.classList.toggle('on',!vis.hero&&!vis.end&&!sh.classList.contains('on')&&!lb.classList.contains('on')&&!mnv.classList.contains('on'));
 const io=new IntersectionObserver(es=>{es.forEach(e=>{vis[e.target.dataset.fz]=e.isIntersecting});upd();},{threshold:0});
 const h=document.querySelector('.hero'),c=document.querySelector('.close'),f=document.querySelector('footer'),a=document.getElementById('ask');
 h.dataset.fz='hero';io.observe(h);
 const io2=new IntersectionObserver(es=>{vis.end=es.some(e=>e.isIntersecting)||[a,c,f].some(x=>{const r=x.getBoundingClientRect();return r.top<innerHeight&&r.bottom>0});upd();},{threshold:0});
 io2.observe(a);io2.observe(c);io2.observe(f);
-const mo=new MutationObserver(upd);mo.observe(sh,{attributes:true,attributeFilter:['class']});mo.observe(lb,{attributes:true,attributeFilter:['class']});
+const mo=new MutationObserver(upd);mo.observe(sh,{attributes:true,attributeFilter:['class']});mo.observe(lb,{attributes:true,attributeFilter:['class']});mo.observe(mnv,{attributes:true,attributeFilter:['class']});
+})();
+</script>
+
+<script>
+(()=>{const mn=document.getElementById('mn'),mb=document.getElementById('mbtn');
+const open=()=>{mn.classList.add('on');mb.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';};
+const close=()=>{mn.classList.remove('on');mb.setAttribute('aria-expanded','false');document.body.style.overflow='';};
+mb.onclick=open;document.getElementById('mx').onclick=close;
+mn.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',close));
+addEventListener('keydown',e=>{if(e.key==='Escape'&&mn.classList.contains('on'))close();});
 })();
 </script>
 </body>
