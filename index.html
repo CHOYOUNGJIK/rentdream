@@ -2,6 +2,22 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
+<!-- Google Analytics (렌트드림) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JQEKRW1Q8Z"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','G-JQEKRW1Q8Z');
+document.addEventListener('click',function(e){
+var t=e.target.closest&&e.target.closest('a[href],.ask-open');if(!t)return;
+var h=t.getAttribute('href')||'',ev=null;
+if(h.indexOf('tel:')===0)ev='click_call';
+else if(h.indexOf('open.kakao.com')>-1)ev='click_kakao';
+else if(h.indexOf('t.me/')>-1)ev='click_telegram';
+else if(h.indexOf('mailto:')===0)ev='click_email';
+else if(t.classList.contains('ask-open'))ev='open_inquiry';
+if(ev)gtag('event',ev,{page_path:location.pathname});
+},true);
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>렌트드림 | 수입차·슈퍼카 렌트, 브랜드·프로덕션 차량</title>
 <meta name="description" content="수입차·슈퍼카 단기렌트부터 런칭·시승·R&amp;D·촬영·의전 차량까지. 롤스로이스·벤틀리·페라리·람보르기니·포르쉐, 프리미엄 모빌리티 파트너 렌트드림.">
@@ -323,6 +339,7 @@ section{padding:72px 0}
 .mn .mc .t{background:linear-gradient(145deg,#d9bd86,#a8884f)}.mn .mc .k{background:#FEE500}.mn .mc .g{background:linear-gradient(160deg,#37b5f0,#1e96d6)}
 .mn .mf{flex:none;margin-top:16px;text-align:center;font-size:12px;color:var(--mut);letter-spacing:.04em}
 }
+footer .fj{opacity:.7}
 </style>
 </head>
 <body>
@@ -439,7 +456,7 @@ section{padding:72px 0}
 <div class="wrap">
 <div class="fbrand"><img src="logo/rentdream-white.png" alt="RentDream" width="95" height="26"><span class="fsep" aria-hidden="true"></span><div class="fcontact"><span>대표 조영직</span><a href="tel:+821067900580">010 6790 0580</a><a class="fmail" href="mailto:contact@rentdream.kr">contact@rentdream.kr</a></div></div>
 <p class="fbiz">㈜렌트드림 · 사업자등록번호 450-81-00922</p>
-<p>© 2026 RentDream. All rights reserved.</p>
+<p>© 2026 RentDream. All rights reserved.<span class="fj"> · <a href="/journal/">Journal</a></span></p>
 </div>
 </footer>
 
