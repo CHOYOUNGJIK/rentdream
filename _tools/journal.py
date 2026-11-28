@@ -181,7 +181,7 @@ def build(queue):
 
     # 사이트맵
     last = posts[-1]["date"] if posts else today()
-    urls = [(f"{SITE}/", None, "1.0"), (f"{SITE}/journal/", last, "0.6")]
+    urls = [(f"{SITE}/", None, "1.0"), (f"{SITE}/supercar/", "2026-11-28", "0.9"), (f"{SITE}/journal/", last, "0.6")]
     urls += [(f"{SITE}/journal/{p['slug']}/", p["date"], "0.8") for p in posts]
     sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     old = open(os.path.join(ROOT, "sitemap.xml"), encoding="utf-8").read()
