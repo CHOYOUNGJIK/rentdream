@@ -192,7 +192,27 @@ def build(queue):
     sm.append("</urlset>")
     with open(os.path.join(ROOT, "sitemap.xml"), "w", encoding="utf-8") as f:
         f.write("\n".join(sm) + "\n")
+    update_home(posts)
     return posts
+
+
+def update_home(posts):
+    """홈페이지(index.html)의 최신 저널 3편 칸을 갱신한다"""
+    path = os.path.join(ROOT, "index.html")
+    with open(path, encoding="utf-8") as f:
+        page = f.read()
+    a, b = "<!--JOURNAL:START-->", "<!--JOURNAL:END-->"
+    if a not in page or b not in page:
+        return
+    cards = "".join(
+        f'<a class="jc" href="/journal/{p["slug"]}/"><span class="ji">'
+        + (f'<img src="/{p["cover"]}" alt="" width="960" height="527" loading="lazy">' if p.get("cover") else "")
+        + f'</span><span class="jt"><small>{html.escape(p["cat"])} · {fmt_date(p["date"])}</small><b>{" ".join("<span>" + html.escape(x.strip()) + "</span>" for x in p["h1"].split("|"))}</b></span></a>'
+        for p in list(reversed(posts))[:3])
+    new = page[:page.index(a) + len(a)] + cards + page[page.index(b):]
+    if new != page:
+        with open(path, "w", encoding="utf-8") as f:
+            f.write(new)
 
 
 def main():
