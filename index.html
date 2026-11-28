@@ -30,6 +30,7 @@ if(ev)gtag('event',ev,{page_path:location.pathname});
 <meta property="og:image:height" content="630">
 <meta property="og:url" content="https://rentdream.kr/">
 <link rel="canonical" href="https://rentdream.kr/">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "렌트드림", "alternateName": "RentDream", "url": "https://rentdream.kr/"}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "렌트드림", "alternateName": "RentDream", "legalName": "㈜렌트드림", "url": "https://rentdream.kr/", "logo": "https://rentdream.kr/favicon-512.png", "email": "contact@rentdream.kr", "telephone": "+82-10-6790-0580", "contactPoint": {"@type": "ContactPoint", "telephone": "+82-10-6790-0580", "contactType": "customer service", "areaServed": "KR", "availableLanguage": "Korean"}}</script>
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
@@ -340,6 +341,30 @@ section{padding:72px 0}
 .mn .mf{flex:none;margin-top:16px;text-align:center;font-size:12px;color:var(--mut);letter-spacing:.04em}
 }
 footer .fj{opacity:.7}
+
+/* journal on home */
+.jl{display:grid;grid-template-columns:repeat(auto-fit,minmax(0,340px));justify-content:center;gap:28px;margin-top:clamp(56px,7vw,84px);text-align:left}
+.jc{display:block;color:var(--ink)}
+.jc .ji{display:block;aspect-ratio:16/9;overflow:hidden;background:#0b0b0c;border:1px solid var(--line)}
+.jc img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+.jc:hover img{transform:scale(1.04)}
+.jc .jt{display:block;padding:18px 2px 0}
+.jc small{display:block;font:500 11px/1 "Inter",sans-serif;letter-spacing:.2em;color:var(--gold);text-transform:uppercase}
+.jc b{display:block;margin-top:12px;font-weight:500;font-size:17px;line-height:1.55;word-break:keep-all}
+.jmore{display:inline-flex;gap:8px;margin-top:46px;font-size:14px;letter-spacing:.06em;color:var(--sub);border-bottom:1px solid var(--line);padding:10px 2px 8px;transition:color .2s}
+.jmore:hover{color:var(--ink)}
+.jc b{text-wrap:balance}
+@media(max-width:640px){
+.jl{grid-template-columns:minmax(0,1fr);gap:0;margin-top:34px;border-top:1px solid var(--line)}
+.jc{position:relative;padding:20px 30px 20px 2px;border-bottom:1px solid var(--line)}
+.jc::after{content:"›";position:absolute;right:6px;top:50%;margin-top:-13px;font:300 24px/1 "Inter",sans-serif;color:var(--mut)}
+.jc .ji{display:none}
+.jc .jt{padding:0}
+.jc small{font-size:10px;letter-spacing:.16em}
+.jc b{font-size:15.5px;margin-top:10px;line-height:1.55}
+.jc b span{display:block}
+.jmore{margin-top:28px}
+}
 </style>
 </head>
 <body>
@@ -440,6 +465,16 @@ footer .fj{opacity:.7}
 <div class="w"><span>이벤트 에이전시</span><b><span>비교시승</span><i class="dt"> · </i><span>이벤트 운영</span></b></div>
 <div class="w"><span>개인 · 법인 고객</span><b><span>수입차 · 슈퍼카</span><i class="dt"> · </i><span>단기렌트</span></b></div>
 </div>
+</div>
+</section>
+
+<section class="jr" id="journal">
+<div class="wrap">
+<span class="lab">Journal</span>
+<h2>Rent Guide</h2>
+<p class="ko">차량을 고르기 전에 알아두면 좋은 이야기</p>
+<div class="jl"><!--JOURNAL:START--><a class="jc" href="/journal/import-car-rent/"><span class="ji"><img src="/img/hero.jpg" alt="" width="960" height="527" loading="lazy"></span><span class="jt"><small>Imported Cars · 2026.11.28</small><b><span>수입차렌트·외제차 단기렌트</span> <span>이용 가이드</span></b></span></a><a class="jc" href="/journal/supercar-rent/"><span class="ji"><img src="/img/temerario.jpg" alt="" width="960" height="527" loading="lazy"></span><span class="jt"><small>Supercar · 2026.11.27</small><b><span>슈퍼카렌트,</span> <span>처음 빌리기 전에 알아둘 것</span></b></span></a><!--JOURNAL:END--></div>
+<a class="jmore" href="/journal/">전체 글 보기 <i aria-hidden="true">→</i></a>
 </div>
 </section>
 
